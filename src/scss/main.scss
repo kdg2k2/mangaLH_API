@@ -1,0 +1,12 @@
+//home
+.image-card{
+    height: 250px;
+}
+
+//read
+@media (max-width: 767px){
+.chapter-btn {
+    display: flex;
+    justify-content: center;
+    }
+}
