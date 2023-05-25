@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <h1>Chapter <%= data.currentChapter %></h1>
+
+        <% if (data.prevChapter) { %>
+        <a href="/manga/<%= data.mangaName %>/<%= data.prevChapter %>"
+            class="btn btn-primary mb-2">Previous Chapter</a>
+        <% } %>
+
+        <% if (data.nextChapter) { %>
+        <a href="/manga/<%= data.mangaName %>/<%= data.nextChapter %>"
+            class="btn btn-primary mb-2">Next Chapter</a>
+        <% } %>
+
+        <div class="row">
+            <% data.pages.forEach(function(page) { %>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <img src="<%= page %>" class="img-fluid" alt="Page">
+            </div>
+            <% }); %>
+        </div>
+
+        <h2>Chapter List</h2>
+        <ul class="list-group mt-4">
+            <% data.chapterList.forEach(function(chapter) { %>
+            <li class="list-group-item">
+                <a href="/manga/<%= data.mangaName %>/<%= chapter.chapEP %>"><%=
+                    chapter.chapter %></a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>

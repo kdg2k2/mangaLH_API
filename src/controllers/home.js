@@ -64,7 +64,7 @@ const homePage = (async (req, res) => {
       }
     });
   
-    res.render('home', { data: result.data });
+    res.render('pages/home', { data: result.data });
   });
 
 module.exports = homePage;

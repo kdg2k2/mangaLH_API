@@ -1,12 +1,14 @@
 import express from 'express';
 import homeController from '../controllers/home'
-import listController from '../controllers/list'
+import mangaDetailController from '../controllers/mangaDetail'
+import mangaReadController from '../controllers/mangaRead'
 
 let router = express.Router();
 
 let initWebRoutes = (app) => {
 	router.get('/', homeController)
-	router.get('/list', listController)
+	router.get('/:name', mangaDetailController)
+	router.get('/:name/:chap', mangaReadController)
 
 	return app.use('/', router);
 };

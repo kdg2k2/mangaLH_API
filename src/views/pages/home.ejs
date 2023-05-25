@@ -1,0 +1,72 @@
+<%- include('../partials/head') %>
+
+	<body>
+		<%- include('../partials/header') %>
+			<div class="container">
+				<h1>Daily Manga</h1>
+				<div class="row">
+					<% data.daily.forEach(function(manga) { %>
+						<div class="col-md-3">
+							<div class="card mb-3">
+								<a href="<%= manga.mangaEP %>">
+									<img style="height: 250px;" class="card-img-top" src="<%= manga.cover %>"
+										alt="Cover Image">
+									<div class="card-body">
+										<h5 class="card-title">
+											<%= manga.title %>
+										</h5>
+								</a>
+								<p>Last Chapter: <%= manga.lastChap %></p>
+								<p class="card-text">Last Update: <%= manga.lastUpdate %>
+								</p>
+							</div>
+						</div>
+				</div>
+				<% }); %>
+			</div>
+
+			<h1>New Update</h1>
+			<div class="row">
+				<% data.newUpdate.forEach(function(manga) { %>
+					<div class="col-md-4">
+						<div class="card mb-4">
+							<img style="height: 250px;" class="card-img-top" src="<%= manga.cover %>" alt="Cover Image">
+							<div class="card-body">
+								<h5 class="card-title">
+									<%= manga.title %>
+								</h5>
+								<p class="card-text">Last Chapter: <%= manga.lastChap %>
+								</p>
+								<p class="card-text">Last Update: <%= manga.lastUpdate %>
+								</p>
+								<a href="<%= manga.mangaEP %>" class="btn btn-primary">Read Manga</a>
+							</div>
+						</div>
+					</div>
+					<% }); %>
+			</div>
+
+			<h1>New Manga</h1>
+			<div class="row">
+				<% data.newManga.forEach(function(manga) { %>
+					<div class="col-md-4">
+						<div class="card mb-4">
+							<img style="height: 250px;" class="card-img-top" src="<%= manga.cover %>" alt="Cover Image">
+							<div class="card-body">
+								<h5 class="card-title">
+									<%= manga.title %>
+								</h5>
+								<p class="card-text">Last Chapter: <%= manga.lastChap %>
+								</p>
+								<p class="card-text">Last Update: <%= manga.lastUpdate %>
+								</p>
+								<a href="<%= manga.mangaEP %>" class="btn btn-primary">Read Manga</a>
+							</div>
+						</div>
+					</div>
+					<% }); %>
+			</div>
+			</div>
+	</body>
+
+	</html>

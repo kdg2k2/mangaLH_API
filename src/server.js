@@ -2,8 +2,10 @@ import express from 'express';
 import viewEngine from './config/viewEngine';
 import initWebroutes from './route/web';
 require('dotenv').config();
+const cors = require("cors");
 
 let app = express();
+app.use(cors());
 
 viewEngine(app);
 initWebroutes(app);
