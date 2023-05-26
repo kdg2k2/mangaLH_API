@@ -2,7 +2,7 @@
 
 <body>
     <%- include('../partials/header') %>
-    <div class="container body mb-4 mt-3">
+    <div class="container body pb-3 mb-4 mt-3">
         <h1>
             <%= data.title %>
         </h1>
@@ -10,8 +10,9 @@
         <div class="row">
             <div class="col-md-4">
                 <img src="<%= data.cover %>" class="img-fluid mb-4" alt="Cover">
-                <h3>Genres</h3>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled nav-body pt-3 pb-3">
+                    <div class="content">
+                        <h4>Genres</h4>
                     <% if (data.genres) { %>
                     <% data.genres.forEach(function(genre) { %>
                     <li>
@@ -21,11 +22,14 @@
                     <% } else { %>
                     <li>No genres available</li>
                     <% } %>
+                    </div>
                 </ul>
             </div>
 
             <div class="col-md-8">
-                <h3>Other Titles</h3>
+                <div class="nav-body pt-3 pb-3">
+                    <div class="content">
+                        <h4>Other Titles</h4>
                 <% if (data.otherTitle) { %>
                 <ul class="list-unstyled">
                     <% data.otherTitle.forEach(function(title) { %>
@@ -38,7 +42,7 @@
                 <p>No other titles available</p>
                 <% } %>
 
-                <h3>Author</h3>
+                <h4>Author</h4>
                 <% if (Array.isArray(data.author)) { %>
                 <ul class="list-unstyled">
                     <% data.author.forEach(function(author) { %>
@@ -53,30 +57,32 @@
                 </p>
                 <% } %>
 
-                <h3>Status</h3>
+                <h4>Status</h4>
                 <p>
                     <%= data.status %>
                 </p>
 
-                <h3>Last Update</h3>
+                <h4>Last Update</h4>
                 <p>
                     <%= data.lastUpdate %>
                 </p>
 
-                <h3>Rating</h3>
+                <h4>Rating</h4>
                 <p>
                     <%= data.rating %>
                 </p>
 
-                <h3>View</h3>
+                <h4>View</h4>
                 <p>
                     <%= data.view %>
                 </p>
 
-                <h3>Description</h3>
+                <h4>Description</h4>
                 <p>
                     <%= data.description %>
                 </p>
+                </div>
+                    </div>
             </div>
         </div>
 

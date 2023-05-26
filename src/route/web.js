@@ -10,7 +10,7 @@ let router = express.Router();
 let initWebRoutes = (app) => {
 	router.get('/', homeController)
 	router.get('/search', searchController)
-	router.get('/random/', randomController)
+	router.get('/random', randomController)
 	router.get('/:name', mangaDetailController)
 	router.get('/:name/:chap', mangaReadController)
 

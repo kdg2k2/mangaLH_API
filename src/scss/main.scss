@@ -2,7 +2,7 @@ body{
     background-image: url("/image/background.png");
 }
 
-h1{
+h1, h2{
     color: #f8f9fa;
 }
 
@@ -23,6 +23,16 @@ transform: scale(1.1);
 
 .card{
     border-radius: 5px;
+}
+
+//detail
+.nav-body{
+    background-color: #6c757d;
+    border-radius: 10px;
+}
+
+.content{
+    margin-left: 20px;
 }
 
 //read
