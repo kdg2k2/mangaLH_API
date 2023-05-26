@@ -9,14 +9,16 @@
 		<% if (data.mangas && data.mangas.length > 0) { %>
 			<div class="row">
 				<% data.mangas.forEach(function(manga) { %>
-					<div class="col-md-4 mb-4">
+					<div class="col-md-3 mb-3">
 						<div class="card">
-							<img src="<%= manga.cover %>" class="card-img-top" alt="Manga Cover">
+                            <a href="<%= manga.mangaEP %>">
+							<img src="<%= manga.cover %>" class="card-img-top image-card" alt="Manga Cover">
 							<div class="card-body">
 								<h5 class="card-title"><%= manga.title %></h5>
+                            </a>
 								<p class="card-text">Last Chapter: <%= manga.lastChap %></p>
 								<p class="card-text">Last Update: <%= manga.lastUpdate %></p>
-								<a href="<%= manga.mangaEP %>" class="btn btn-primary">Read</a>
+								
 							</div>
 						</div>
 					</div>
