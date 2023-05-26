@@ -80,17 +80,17 @@
       <div class="row">
          <% data.related.forEach(function(manga) { %>
          <div class="col-md-4">
-            <div class="card mb-4">
-               <img src="<%= manga.cover %>" class="card-img-top"
+            <div class="card related-manga mb-4">
+               <a href="/<%= manga.mangaEP %>">
+               <img style="height: 320px;" src="<%= manga.cover %>" class="card-img-top"
                   alt="Cover">
                <div class="card-body">
                   <h5 class="card-title">
                      <%= manga.title %>
-                  </h5>
+                  </h5></a>
                   <p class="card-text">
                      <%= manga.description %>
                   </p>
-                  <a href="/<%= manga.mangaEP %>" class="btn btn-primary">Read</a>
                </div>
             </div>
          </div>

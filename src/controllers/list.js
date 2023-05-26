@@ -104,16 +104,16 @@ const list = ( async (req, res) => {
       "Gourmet",
     ];
 
-    result.data.genresListFilter = [];
-    genresList.map((genre) => {
-      genreObj = {};
-      genreObj.genre = genre;
-      genreObj.EP = removeVietnameseTones(genre).toLowerCase().replace(/\s/g, "-");
-
-        result.data.genresListFilter.push(genreObj);
+    result.data.genresListFilter = genresList.map((genre) => {
+      return {
+        genre: genre,
+        EP: removeVietnameseTones(genre).toLowerCase().replace(/\s/g, "-"),
+      };
     });
+    
 
-    res.send(result);
+    // res.render('partials/header.ejs', result);
+    res.json(result);
     return;
   }
 
@@ -166,7 +166,7 @@ const list = ( async (req, res) => {
 
     const lastUpdate = $(el).find(".timeago").attr("datetime");
 
-    mangaLink = $(el).find("a").attr("href");
+    const mangaLink = $(el).find("a").attr("href");
     const mangaEP = mangaLink.slice(-(mangaLink.length - 39));
 
     const mangaObj = {
@@ -179,7 +179,7 @@ const list = ( async (req, res) => {
 
     result.data.mangas.push(mangaObj);
   });
-  res.render('header', { data: data });
+  res.render('pages/search', result);
 });
 
 module.exports = list;

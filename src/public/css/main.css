@@ -4,6 +4,9 @@ body {
 h1, h2 {
   color: #f8f9fa; }
 
+a:hover {
+  text-decoration: none; }
+
 .image-card {
   height: 250px;
   transition: transform 0.5s ease; }
@@ -16,7 +19,20 @@ h1, h2 {
   border-radius: 10px; }
 
 .card {
-  border-radius: 5px; }
+  border-radius: 5px;
+  height: 445px; }
+
+.more-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.xem-them {
+  text-align: center;
+  position: relative;
+  top: 300px;
+  color: #e4598c; }
 
 .nav-body {
   background-color: #6c757d;
@@ -24,6 +40,9 @@ h1, h2 {
 
 .content {
   margin-left: 20px; }
+
+.related-manga {
+  background-color: #6c757d; }
 
 @media (max-width: 767px) {
   .chapter-btn {

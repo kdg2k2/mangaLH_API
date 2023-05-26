@@ -6,6 +6,10 @@ h1, h2{
     color: #f8f9fa;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 //home
 .image-card{
     height: 250px;
@@ -23,6 +27,21 @@ transform: scale(1.1);
 
 .card{
     border-radius: 5px;
+    height: 445px;
+}
+
+.more-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.xem-them{
+    text-align: center;
+    position: relative;
+    top: 300px;
+    color: #e4598c;
 }
 
 //detail
@@ -33,6 +52,10 @@ transform: scale(1.1);
 
 .content{
     margin-left: 20px;
+}
+
+.related-manga{
+    background-color: #6c757d;
 }
 
 //read
