@@ -33,7 +33,7 @@
 			<ul class="pagination">
 				<% for (let i = 1; i <= data.totalPages; i++) { %>
 					<li class="page-item <% if (data.currentPage === i) { %>active<% } %>">
-						<a class="page-link" href="?page=<%= i %>"><%= i %></a>
+						<a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= i %>"><%= i %></a>
 					</li>
 				<% } %>
 			</ul>

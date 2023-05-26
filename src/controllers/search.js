@@ -108,6 +108,7 @@ const search = async (req, res) => {
 
 		result.data.mangas.push(mangaObj);
 	});
+	result.data.queryResults = req.query.keyword
 	res.render('pages/search', result)
 };
 
