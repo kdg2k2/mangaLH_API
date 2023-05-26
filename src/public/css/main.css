@@ -7,9 +7,15 @@ h1, h2 {
 a:hover {
   text-decoration: none; }
 
-.move-on {
+.move-up {
   position: fixed;
-  bottom: 20px;
+  bottom: 50px;
+  right: 20px;
+  cursor: pointer; }
+
+.move-down {
+  position: fixed;
+  bottom: 10px;
   right: 20px;
   cursor: pointer; }
 
