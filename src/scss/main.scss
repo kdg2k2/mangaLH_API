@@ -1,6 +1,28 @@
+body{
+    background-image: url("/image/background.png");
+}
+
+h1{
+    color: #f8f9fa;
+}
+
 //home
 .image-card{
     height: 250px;
+    transition: transform 0.5s ease;
+}
+
+.image-card:hover {
+transform: scale(1.1);
+}
+
+.body{
+    background-color: #343a40;
+    border-radius: 10px;
+}
+
+.card{
+    border-radius: 5px;
 }
 
 //read
@@ -9,4 +31,12 @@
     display: flex;
     justify-content: center;
     }
+}
+
+.img-fluid{
+    width: 100%;
+}
+
+.title-chap{
+    text-align: center;
 }

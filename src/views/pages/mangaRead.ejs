@@ -1,9 +1,10 @@
 <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
-    <div class="container">
-        <h1 class="mt-3 mb-3">Chapter <%= data.currentChapter %></h1>
+    <div class="container body">
+        <h1 class="mb-3 mt-4 title-chap"><%= data.currentChapter %></h1>
 
+        <div class="container">
         <% if (data.prevChapter) { %>
         <a href="/<%= data.mangaName %>/<%= data.prevChapter %>"
             class="btn btn-primary mb-2 chapter-btn">Previous Chapter</a>
@@ -14,11 +15,8 @@
             class="btn btn-primary mb-2 chapter-btn">Next Chapter</a>
         <% } %>
 
-        <div class="row">
             <% data.pages.forEach(function(page) { %>
                 <img src="<%= page %>" class="img-fluid" alt="Page">
-            <!-- <div class="col-md-6 col-lg-4 mb-4">
-            </div> -->
             <% }); %>
         </div>
 
@@ -43,3 +41,4 @@
         </ul>
     </div>
 </body>
+<%- include('../partials/footer') %>
