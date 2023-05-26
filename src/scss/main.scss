@@ -10,6 +10,13 @@ a:hover{
     text-decoration: none;
 }
 
+.move-on {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
 //home
 .image-card{
     height: 250px;
@@ -72,4 +79,11 @@ transform: scale(1.1);
 
 .title-chap{
     text-align: center;
+    padding-top: 10px;
+}
+
+//search
+.pagination{
+    display: flex;
+    justify-content: center;
 }

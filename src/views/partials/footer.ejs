@@ -1,8 +1,16 @@
 <footer class="bg-light text-center text-lg-start">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: #343a40; color: #fafafa;">
-      © 2023 Copyright:
-      <a href="/">Home</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var moveOnElement = document.querySelector('.move-on');
+      moveOnElement.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #343a40; color: #fafafa;">
+    © 2023 Copyright:
+    <a href="/">Home</a>
+  </div>
+  <!-- Copyright -->
+</footer>

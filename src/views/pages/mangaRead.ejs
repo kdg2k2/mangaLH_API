@@ -1,6 +1,9 @@
 <%- include('../partials/head') %>
 <body>
    <%- include('../partials/header') %>
+   <div class="move-on">
+      <img src="/image/up-arrow.png" alt="">
+   </div>
    <div class="container body">
       <h1 class="mb-3 mt-4 title-chap"><%= data.currentChapter %></h1>
       <div class="container">
@@ -34,5 +37,5 @@
          <% }); %>
       </ul>
    </div>
+   <%- include('../partials/footer') %>
 </body>
-<%- include('../partials/footer') %>
