@@ -95,7 +95,7 @@ const search = async (req, res) => {
 
 		const lastUpdate = $(el).find('.timeago').attr('datetime');
 
-		mangaLink = $(el).find('a').attr('href');
+		const mangaLink = $(el).find('a').attr('href');
 		const mangaEP = mangaLink.slice(-(mangaLink.length - 39));
 
 		const mangaObj = {
@@ -108,7 +108,7 @@ const search = async (req, res) => {
 
 		result.data.mangas.push(mangaObj);
 	});
-	res.render('pages/search', {data:result.data})
+	res.render('pages/search', result)
 };
 
 module.exports = search;
