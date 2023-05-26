@@ -1,124 +1,112 @@
 <%- include('../partials/head') %>
-
 <body>
-    <%- include('../partials/header') %>
-    <div class="container body pb-3 mb-4 mt-3">
-        <h1>
-            <%= data.title %>
-        </h1>
-
-        <div class="row">
-            <div class="col-md-4">
-                <img src="<%= data.cover %>" class="img-fluid mb-4" alt="Cover">
-                <ul class="list-unstyled nav-body pt-3 pb-3">
-                    <div class="content">
-                        <h4>Genres</h4>
-                    <% if (data.genres) { %>
-                    <% data.genres.forEach(function(genre) { %>
-                    <li>
-                        <%= genre %>
-                    </li>
-                    <% }); %>
-                    <% } else { %>
-                    <li>No genres available</li>
-                    <% } %>
-                    </div>
-                </ul>
-            </div>
-
-            <div class="col-md-8">
-                <div class="nav-body pt-3 pb-3">
-                    <div class="content">
-                        <h4>Other Titles</h4>
-                <% if (data.otherTitle) { %>
-                <ul class="list-unstyled">
-                    <% data.otherTitle.forEach(function(title) { %>
-                    <li>
+   <%- include('../partials/header') %>
+   <div class="container body pb-3 mb-4 mt-3">
+      <h1>
+         <%= data.title %>
+      </h1>
+      <div class="row">
+         <div class="col-md-4">
+            <img src="<%= data.cover %>" class="img-fluid mb-4" alt="Cover">
+            <ul class="list-unstyled nav-body pt-3 pb-3">
+               <div class="content">
+                  <h4>Genres</h4>
+                  <% if (data.genres) { %>
+                  <% data.genres.forEach(function(genre) { %>
+                  <li>
+                     <%= genre %>
+                  </li>
+                  <% }); %>
+                  <% } else { %>
+                  <li>No genres available</li>
+                  <% } %>
+               </div>
+            </ul>
+         </div>
+         <div class="col-md-8">
+            <div class="nav-body pt-3 pb-3">
+               <div class="content">
+                  <h4>Other Titles</h4>
+                  <% if (data.otherTitle) { %>
+                  <ul class="list-unstyled">
+                     <% data.otherTitle.forEach(function(title) { %>
+                     <li>
                         <%= title %>
-                    </li>
-                    <% }); %>
-                </ul>
-                <% } else { %>
-                <p>No other titles available</p>
-                <% } %>
-
-                <h4>Author</h4>
-                <% if (Array.isArray(data.author)) { %>
-                <ul class="list-unstyled">
-                    <% data.author.forEach(function(author) { %>
-                    <li>
+                     </li>
+                     <% }); %>
+                  </ul>
+                  <% } else { %>
+                  <p>No other titles available</p>
+                  <% } %>
+                  <h4>Author</h4>
+                  <% if (Array.isArray(data.author)) { %>
+                  <ul class="list-unstyled">
+                     <% data.author.forEach(function(author) { %>
+                     <li>
                         <%= author %>
-                    </li>
-                    <% }); %>
-                </ul>
-                <% } else { %>
-                <p>
-                    <%= data.author %>
-                </p>
-                <% } %>
-
-                <h4>Status</h4>
-                <p>
-                    <%= data.status %>
-                </p>
-
-                <h4>Last Update</h4>
-                <p>
-                    <%= data.lastUpdate %>
-                </p>
-
-                <h4>Rating</h4>
-                <p>
-                    <%= data.rating %>
-                </p>
-
-                <h4>View</h4>
-                <p>
-                    <%= data.view %>
-                </p>
-
-                <h4>Description</h4>
-                <p>
-                    <%= data.description %>
-                </p>
-                </div>
-                    </div>
+                     </li>
+                     <% }); %>
+                  </ul>
+                  <% } else { %>
+                  <p>
+                     <%= data.author %>
+                  </p>
+                  <% } %>
+                  <h4>Status</h4>
+                  <p>
+                     <%= data.status %>
+                  </p>
+                  <h4>Last Update</h4>
+                  <p>
+                     <%= data.lastUpdate %>
+                  </p>
+                  <h4>Rating</h4>
+                  <p>
+                     <%= data.rating %>
+                  </p>
+                  <h4>View</h4>
+                  <p>
+                     <%= data.view %>
+                  </p>
+                  <h4>Description</h4>
+                  <p>
+                     <%= data.description %>
+                  </p>
+               </div>
             </div>
-        </div>
-
-        <h2>Related Manga</h2>
-        <div class="row">
-            <% data.related.forEach(function(manga) { %>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="<%= manga.cover %>" class="card-img-top"
-                        alt="Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= manga.title %>
-                        </h5>
-                        <p class="card-text">
-                            <%= manga.description %>
-                        </p>
-                        <a href="/<%= manga.mangaEP %>" class="btn btn-primary">Read</a>
-                    </div>
-                </div>
+         </div>
+      </div>
+      <h2>Related Manga</h2>
+      <div class="row">
+         <% data.related.forEach(function(manga) { %>
+         <div class="col-md-4">
+            <div class="card mb-4">
+               <img src="<%= manga.cover %>" class="card-img-top"
+                  alt="Cover">
+               <div class="card-body">
+                  <h5 class="card-title">
+                     <%= manga.title %>
+                  </h5>
+                  <p class="card-text">
+                     <%= manga.description %>
+                  </p>
+                  <a href="/<%= manga.mangaEP %>" class="btn btn-primary">Read</a>
+               </div>
             </div>
-            <% }); %>
-        </div>
-
-        <h2>Chapter List</h2>
-        <ul class="list-group mt-4">
-            <% var thisEP = data.mangaName.name %>
-            <% data.chaps.forEach(function(chap) { %>
-            <li class="list-group-item">
-                <a href="<%=thisEP%>/<%= chap.chapEP %>">
-                    <%= chap.chapTitle %>
-                </a>
-
-            </li>
-            <% }); %>
-        </ul>
-    </div>
+         </div>
+         <% }); %>
+      </div>
+      <h2>Chapter List</h2>
+      <ul class="list-group mt-4">
+         <% var thisEP = data.mangaName.name %>
+         <% data.chaps.forEach(function(chap) { %>
+         <li class="list-group-item">
+            <a href="<%=thisEP%>/<%= chap.chapEP %>">
+            <%= chap.chapTitle %>
+            </a>
+         </li>
+         <% }); %>
+      </ul>
+   </div>
 </body>
 <%- include('../partials/footer') %>

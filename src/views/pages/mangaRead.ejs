@@ -1,44 +1,38 @@
 <%- include('../partials/head') %>
 <body>
-    <%- include('../partials/header') %>
-    <div class="container body">
-        <h1 class="mb-3 mt-4 title-chap"><%= data.currentChapter %></h1>
-
-        <div class="container">
-        <% if (data.prevChapter) { %>
-        <a href="/<%= data.mangaName %>/<%= data.prevChapter %>"
+   <%- include('../partials/header') %>
+   <div class="container body">
+      <h1 class="mb-3 mt-4 title-chap"><%= data.currentChapter %></h1>
+      <div class="container">
+         <% if (data.prevChapter) { %>
+         <a href="/<%= data.mangaName %>/<%= data.prevChapter %>"
             class="btn btn-primary mb-2 chapter-btn">Previous Chapter</a>
-        <% } %>
-
-        <% if (data.nextChapter) { %>
-        <a href="/<%= data.mangaName %>/<%= data.nextChapter %>"
+         <% } %>
+         <% if (data.nextChapter) { %>
+         <a href="/<%= data.mangaName %>/<%= data.nextChapter %>"
             class="btn btn-primary mb-2 chapter-btn">Next Chapter</a>
-        <% } %>
-
-            <% data.pages.forEach(function(page) { %>
-                <img src="<%= page %>" class="img-fluid" alt="Page">
-            <% }); %>
-        </div>
-
-        <% if (data.prevChapter) { %>
-            <a href="/<%= data.mangaName %>/<%= data.prevChapter %>"
-                class="btn btn-primary mb-2 chapter-btn">Previous Chapter</a>
-            <% } %>
-    
-            <% if (data.nextChapter) { %>
-            <a href="/<%= data.mangaName %>/<%= data.nextChapter %>"
-                class="btn btn-primary mb-2 chapter-btn">Next Chapter</a>
-            <% } %>
-
-        <h2>Chapter List</h2>
-        <ul class="list-group mt-4 mb-5">
-            <% data.chapterList.forEach(function(chapter) { %>
-            <li class="list-group-item">
-                <a href="/manga/<%= data.mangaName %>/<%= chapter.chapEP %>"><%=
-                    chapter.chapter %></a>
-            </li>
-            <% }); %>
-        </ul>
-    </div>
+         <% } %>
+         <% data.pages.forEach(function(page) { %>
+         <img src="<%= page %>" class="img-fluid" alt="Page">
+         <% }); %>
+      </div>
+      <% if (data.prevChapter) { %>
+      <a href="/<%= data.mangaName %>/<%= data.prevChapter %>"
+         class="btn btn-primary mb-2 chapter-btn">Previous Chapter</a>
+      <% } %>
+      <% if (data.nextChapter) { %>
+      <a href="/<%= data.mangaName %>/<%= data.nextChapter %>"
+         class="btn btn-primary mb-2 chapter-btn">Next Chapter</a>
+      <% } %>
+      <h2>Chapter List</h2>
+      <ul class="list-group mt-4 mb-5">
+         <% data.chapterList.forEach(function(chapter) { %>
+         <li class="list-group-item">
+            <a href="/manga/<%= data.mangaName %>/<%= chapter.chapEP %>"><%=
+               chapter.chapter %></a>
+         </li>
+         <% }); %>
+      </ul>
+   </div>
 </body>
 <%- include('../partials/footer') %>
