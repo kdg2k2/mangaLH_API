@@ -139,7 +139,7 @@ const mangaDetail = async (req, res) => {
 		result.data.chaps.unshift(chapFormat);
 	});
 	result.data.mangaName = req.params;
-	res.render('pages/mangaDetail', { data:result.data });
+	res.render('pages/mangaDetail', { data: result.data });
 };
 
 module.exports = mangaDetail;

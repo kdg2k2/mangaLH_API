@@ -1,124 +1,126 @@
 <%- include('../partials/head') %>
-<body>
-   <%- include('../partials/header') %>
-   <div class="move-up">
-      <img src="/image/up.png" alt="">
-   </div>
-   <div class="move-down">
-      <img src="/image/down.png" alt="">
-   </div>
-   <div class="container body mt-3">
-      <h1 class="pb-3 pt-3">Truyện hot trong ngày</h1>
-      <div class="row">
-         <% data.daily.forEach(function(manga) { %>
-         <div class="col-md-3">
-            <div class="card mb-3">
-               <a href="<%= manga.mangaEP %>">
-                  <div class="image-container">
-                     <% if (manga.cover) { %>
-                     <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Ảnh truyện">
-                     <% } else { %>
-                     <img class="card-img-top image-card" src="/image/default-imagel.jpg" alt="Ảnh truyện">
-                     <% } %>
-                  </div>
-                  <div class="card-body">
-                        
-                     <h5 class="card-title">
-                        <% if (manga.title.length> 30) { %>
-                        <%= manga.title.slice(0, 30) + '...' %>
-                        <% } else { %>
-                        <%= manga.title %>
-                        <% } %>
-                     </h5>
-               </a>
-               <p>Last Chapter: <%= manga.lastChap %>
-               </p>
-               <p class="card-text">Last Update: <%= manga.lastUpdate %>
-               </p>
-               </div>
-            </div>
-         </div>
-         <% }); %>
-         
-      </div>
-   </div>
-   <div class="container body mt-3">
-      <h1 class="pb-3 pt-3">Truyện mới cập nhật</h1>
-      <div class="row">
-         <% data.newUpdate.forEach(function(manga) { %>
-         <div class="col-md-3">
-            <div class="card mb-3">
-               <a href="<%= manga.mangaEP %>">
-                  <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Cover Image">
-                  <div class="card-body">
-                        
-                     <h5 class="card-title">
-                        <% if (manga.title.length> 30) { %>
-                        <%= manga.title.slice(0, 30) + '...' %>
-                        <% } else { %>
-                        <%= manga.title %>
-                        <% } %>
-                     </h5>
-               </a>
-               <p class="card-text">Last Chapter: <%= manga.lastChap %>
-               </p>
-               <p class="card-text">Last Update: <%= manga.lastUpdate %>
-               </p>
-               </div>
-            </div>
-         </div>
-         <% }); %>
-         <div class="col-md-3">
-            <a href="/list">
-               <div class="card mb-3">
-                  <div class="card-body">
-                     <img class="more-image" src="/image/read-more.png" alt="">
-                     <h5 class="xem-them">Xem Thêm</h5>
-                  </div>
-               </div>
-            </a>
-         </div>
-      </div>
-   </div>
-   <div class="container body mt-3 mb-3">
-      <h1 class="pb-3 pt-3">Truyện Mới</h1>
-      <div class="row">
-         <% data.newManga.forEach(function(manga) { %>
-         <div class="col-md-3">
-            <div class="card mb-3">
-               <a href="<%= manga.mangaEP %>">
-                  <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Cover Image">
-                  <div class="card-body">
-                        
-                     <h5 class="card-title">
-                        <% if (manga.title.length> 30) { %>
-                        <%= manga.title.slice(0, 30) + '...' %>
-                        <% } else { %>
-                        <%= manga.title %>
-                        <% } %>
-                     </h5>
-               </a>
-               <p class="card-text">Last Chapter: <%= manga.lastChap %>
-               </p>
-               <p class="card-text">Last Update: <%= manga.lastUpdate %>
-               </p>
-               </div>
-            </div>
-         </div>
-         <% }); %>
-         <div class="col-md-3">
-            <a href="/list">
-            <div class="card mb-3">
-               <div class="card-body">
-                     <img class="more-image" src="/image/read-more.png" alt="">
-                     <h5 class="xem-them">Xem Thêm</h5>
-                  </div>
-               </div>
-            </a>
-         </div>
-      </div>
-   </div>
 
-   <%- include('../partials/footer') %>
+<body>
+  <%- include('../partials/header') %>
+  <div class="move-up">
+    <img src="/image/up.png" alt="">
+  </div>
+  <div class="move-down">
+    <img src="/image/down.png" alt="">
+  </div>
+  <div class="container body mt-3">
+    <h1 class="pb-3 pt-3">Truyện hot trong ngày</h1>
+    <div class="row">
+      <% data.daily.forEach(function(manga) { %>
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <a href="<%= manga.mangaEP %>">
+            <div class="image-container">
+              <% if (manga.cover) { %>
+              <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Ảnh truyện">
+              <% } else { %>
+              <img class="card-img-top image-card" src="/image/default-imagel.jpg" alt="Ảnh truyện">
+              <% } %>
+            </div>
+            <div class="card-body">
+
+              <h5 class="card-title">
+                <% if (manga.title.length> 30) { %>
+                <%= manga.title.slice(0, 30) + '...' %>
+                <% } else { %>
+                <%= manga.title %>
+                <% } %>
+              </h5>
+          </a>
+          <p>Last Chapter: <%= manga.lastChap %>
+          </p>
+          <p class="card-text">Last Update: <%= manga.lastUpdate %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+
+  </div>
+  </div>
+  <div class="container body mt-3">
+    <h1 class="pb-3 pt-3">Truyện mới cập nhật</h1>
+    <div class="row">
+      <% data.newUpdate.forEach(function(manga) { %>
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <a href="<%= manga.mangaEP %>">
+            <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Cover Image">
+            <div class="card-body">
+
+              <h5 class="card-title">
+                <% if (manga.title.length> 30) { %>
+                <%= manga.title.slice(0, 30) + '...' %>
+                <% } else { %>
+                <%= manga.title %>
+                <% } %>
+              </h5>
+          </a>
+          <p class="card-text">Last Chapter: <%= manga.lastChap %>
+          </p>
+          <p class="card-text">Last Update: <%= manga.lastUpdate %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+    <div class="col-md-3">
+      <a href="/list">
+        <div class="card mb-3">
+          <div class="card-body">
+            <img class="more-image" src="/image/read-more.png" alt="">
+            <h5 class="xem-them">Xem Thêm</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  </div>
+  <div class="container body mt-3 mb-3">
+    <h1 class="pb-3 pt-3">Truyện Mới</h1>
+    <div class="row">
+      <% data.newManga.forEach(function(manga) { %>
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <a href="<%= manga.mangaEP %>">
+            <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Cover Image">
+            <div class="card-body">
+
+              <h5 class="card-title">
+                <% if (manga.title.length> 30) { %>
+                <%= manga.title.slice(0, 30) + '...' %>
+                <% } else { %>
+                <%= manga.title %>
+                <% } %>
+              </h5>
+          </a>
+          <p class="card-text">Last Chapter: <%= manga.lastChap %>
+          </p>
+          <p class="card-text">Last Update: <%= manga.lastUpdate %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+    <div class="col-md-3">
+      <a href="/list">
+        <div class="card mb-3">
+          <div class="card-body">
+            <img class="more-image" src="/image/read-more.png" alt="">
+            <h5 class="xem-them">Xem Thêm</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <%- include('../partials/footer') %>
 </body>
+
 </html>

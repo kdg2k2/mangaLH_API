@@ -1,14 +1,20 @@
 <footer class="bg-light text-center text-lg-start">
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
       var moveUp = document.querySelector('.move-up');
-      moveUp.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      moveUp.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
 
       var moveDown = document.querySelector('.move-down');
-      moveDown.addEventListener('click', function () {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      moveDown.addEventListener('click', function() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
       });
     });
   </script>
