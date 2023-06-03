@@ -113,7 +113,8 @@ const list = async (req, res) => {
 			};
 		});
 
-		res.render('pages/search', result);
+		// res.render('pages/search', result);
+		res.json(result.data)
 		return;
 	}
 
@@ -185,7 +186,10 @@ const list = async (req, res) => {
 
 		result.data.mangas.push(mangaObj);
 	});
+
 	result.data.queryGenre = req.query.genre;
+	result.data.querySort = req.query.sort;	
+
 	res.render('pages/search', result);
 };
 
