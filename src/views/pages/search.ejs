@@ -42,7 +42,11 @@
     <ul class="pagination">
       <% if (data.totalPages > 1) { %>
       <li class="page-item <% if (data.currentPage === 1) { %>disabled<% } %>">
-        <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=1">First</a>
+        <% if (data.queryGenre) { %>
+        <a class="page-link" href="/list?genre=<%=data.queryGenre%>&page=1">First</a>
+        <% } else if (data.queryKeyword) { %>
+          <a class="page-link" href="/search?keyword=<%=data.queryKeyword%>&page=1">First</a>
+        <% } %>
       </li>
       <% if (data.currentPage > 3) { %>
       <li class="page-item disabled">
@@ -51,7 +55,11 @@
       <% } %>
       <% for (let i = Math.max(1, data.currentPage - 2); i <= Math.min(data.totalPages, data.currentPage + 2); i++) { %>
       <li class="page-item <% if (data.currentPage === i) { %>active<% } %>">
-        <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= i %>"><%= i %></a>
+        <% if (data.queryGenre) { %>
+        <a class="page-link" href="/list?genre=<%=data.queryGenre%>&page=<%= i %>"><%= i %></a>
+        <% } else if (data.queryKeyword) { %>
+          <a class="page-link" href="/search?keyword=<%=data.queryKeyword%>&page=<%= i %>"><%= i %></a>
+        <% } %>
       </li>
       <% } %>
       <% if (data.currentPage < data.totalPages - 2) { %>
@@ -60,7 +68,11 @@
       </li>
       <% } %>
       <li class="page-item <% if (data.currentPage === data.totalPages) { %>disabled<% } %>">
-        <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= data.totalPages %>">Last</a>
+        <% if (data.queryGenre) { %>
+          <a class="page-link" href="/list?genre=<%=data.queryGenre%>&page=<%= data.totalPages %>">Last</a>
+          <% } else if (data.queryKeyword) { %>
+            <a class="page-link" href="/search?keyword=<%=data.queryKeyword%>&page=<%= data.totalPages %>">Last</a>
+          <% } %>
       </li>
       <% } %>
     </ul>

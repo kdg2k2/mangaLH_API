@@ -186,6 +186,7 @@ const list = async (req, res) => {
 
 		result.data.mangas.push(mangaObj);
 	});
+	result.data.queryGenre = req.query.genre;
 	res.render('pages/search', result);
 };
 
