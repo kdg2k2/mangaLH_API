@@ -17,7 +17,7 @@
         <img src="<%= data.cover %>" class="img-fluid mb-4" alt="Cover">
         <ul class="list-unstyled nav-body pt-3 pb-3">
           <div class="content">
-            <h4>Genres</h4>
+            <h4>Thể Loại</h4>
             <% function convertToSlug(text) {
               return text.toLowerCase().replace(/\s+/g, '-');
             } %>
@@ -38,7 +38,7 @@
       <div class="col-md-8">
         <div class="nav-body pt-3 pb-3">
           <div class="content">
-            <h4>Other Titles</h4>
+            <h4>Tên Khác</h4>
             <% if (data.otherTitle) { %>
             <ul class="list-unstyled">
               <% data.otherTitle.forEach(function(title) { %>
@@ -50,7 +50,7 @@
             <% } else { %>
             <p>No other titles available</p>
             <% } %>
-            <h4>Author</h4>
+            <h4>Tác Giả</h4>
             <% if (Array.isArray(data.author)) { %>
             <ul class="list-unstyled">
               <% data.author.forEach(function(author) { %>
@@ -64,7 +64,7 @@
               <%= data.author %>
             </p>
             <% } %>
-            <h4>Status</h4>
+            <h4>Trạng Thái</h4>
             <p>
               <%= data.status %>
             </p>
@@ -72,15 +72,15 @@
             <p>
               <%= data.lastUpdate %>
             </p>
-            <h4>Rating</h4>
+            <h4>Đánh giá</h4>
             <p>
               <%= data.rating %>
             </p>
-            <h4>View</h4>
+            <h4>Lượt Xem</h4>
             <p>
               <%= data.view %>
             </p>
-            <h4>Description</h4>
+            <h4>Mô Tả</h4>
             <p>
               <%= data.description %>
             </p>
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-    <h2>Related Manga</h2>
+    <h2>Truyện đề cử</h2>
     <div class="row">
       <% data.related.forEach(function(manga) { %>
       <div class="col-md-4">
@@ -108,7 +108,7 @@
     </div>
     <% }); %>
   </div>
-  <h2>Chapter List</h2>
+  <h2>Danh Sách Chap</h2>
   <% var thisEP = data.mangaName.name %>
   <% var firstChap = data.chaps[0]; %>
   <a href="<%= thisEP %>/<%= firstChap.chapEP %>" class="btn btn-primary">Đọc Chap Đầu</a>

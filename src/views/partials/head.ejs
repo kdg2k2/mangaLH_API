@@ -9,4 +9,26 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function toggleTable() {
+      var tableContainer = document.getElementById("tableContainer");
+      if (tableContainer.style.display === "none") {
+        tableContainer.style.display = "block";
+        document.addEventListener("click", closeTableOutsideClick);
+      } else {
+        tableContainer.style.display = "none";
+        document.removeEventListener("click", closeTableOutsideClick);
+      }
+    }
+
+    function closeTableOutsideClick(event) {
+      var tableContainer = document.getElementById("tableContainer");
+      var dropdown = document.querySelector(".dropdown");
+      if (!dropdown.contains(event.target)) {
+        tableContainer.style.display = "none";
+        document.removeEventListener("click", closeTableOutsideClick);
+      }
+    }
+  </script>
 </head>

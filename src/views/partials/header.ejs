@@ -1,8 +1,161 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">TruyenLH</a>
+    <li class="list-inline-item"> <a class="navbar-brand" href="/">TruyenLH</a></li>
 
-    <a class="navbar-brand ml-auto" href="/random">Random</a>
+    <!-- 
+      <a class="dropdown-item" href="/list?genre=action">Action</a>
+          <a class="dropdown-item" href="/list?genre=adult">Adult</a>
+          <a class="dropdown-item" href="/list?genre=adventure">Adventure</a>
+          <a class="dropdown-item" href="/list?genre=anime">Anime</a>
+          <a class="dropdown-item" href="/list?genre=chuyen-sinh">Chuyển Sinh</a>
+          <a class="dropdown-item" href="/list?genre=co-dai">Cổ Đại</a>
+          <a class="dropdown-item" href="/list?genre=comedy">Comedy</a>
+          <a class="dropdown-item" href="/list?genre=comic">Comic</a>
+          <a class="dropdown-item" href="/list?genre=demons">Demons</a>
+          <a class="dropdown-item" href="/list?genre=detective">Detective</a>
+          <a class="dropdown-item" href="/list?genre=doujinshi">Doujinshi</a>
+          <a class="dropdown-item" href="/list?genre=drama">Drama</a>
+          <a class="dropdown-item" href="/list?genre=dam-my">Đam Mỹ</a>
+          <a class="dropdown-item" href="/list?genre=ecchi">Ecchi</a>
+          <a class="dropdown-item" href="/list?genre=fantasy">Fantasy</a>
+          <a class="dropdown-item" href="/list?genre=gender-bender">Gender Bender</a>
+          <a class="dropdown-item" href="/list?genre=harem">Harem</a>
+          <a class="dropdown-item" href="/list?genre=historical">Historical</a>
+          <a class="dropdown-item" href="/list?genre=horror">Horror</a>
+          <a class="dropdown-item" href="/list?genre=huyen-huyen">Huyền Huyễn</a>
+          <a class="dropdown-item" href="/list?genre=isekai">Isekai</a>
+          <a class="dropdown-item" href="/list?genre=josei">Josei</a>
+          <a class="dropdown-item" href="/list?genre=mafia">Mafia</a>
+          <a class="dropdown-item" href="/list?genre=magic">Magic</a>
+          <a class="dropdown-item" href="/list?genre=manhua">Manhua</a>
+          <a class="dropdown-item" href="/list?genre=manhwa">Manhwa</a>
+          <a class="dropdown-item" href="/list?genre=martial-arts">Martial Arts</a>
+          <a class="dropdown-item" href="/list?genre=mature">Mature</a>
+          <a class="dropdown-item" href="/list?genre=military">Military</a>
+          <a class="dropdown-item" href="/list?genre=mystery">Mystery</a>
+          <a class="dropdown-item" href="/list?genre=ngon-tinh">Ngôn Tình</a>
+          <a class="dropdown-item" href="/list?genre=one-shot">One shot</a>
+          <a class="dropdown-item" href="/list?genre=psychological">Psychological</a>
+          <a class="dropdown-item" href="/list?genre=romance">Romance</a>
+          <a class="dropdown-item" href="/list?genre=school-life">School Life</a>
+          <a class="dropdown-item" href="/list?genre=sci-fi">Sci-fi</a>
+          <a class="dropdown-item" href="/list?genre=seinen">Seinen</a>
+          <a class="dropdown-item" href="/list?genre=shoujo">Shoujo</a>
+          <a class="dropdown-item" href="/list?genre=shoujo-ai">Shoujo Ai</a>
+          <a class="dropdown-item" href="/list?genre=shounen">Shounen</a>
+          <a class="dropdown-item" href="/list?genre=shounen-ai">Shounen Ai</a>
+          <a class="dropdown-item" href="/list?genre=slice-of-life">Slice of life</a>
+          <a class="dropdown-item" href="/list?genre=smut">Smut</a>
+          <a class="dropdown-item" href="/list?genre=sports">Sports</a>
+          <a class="dropdown-item" href="/list?genre=supernatural">Supernatural</a>
+          <a class="dropdown-item" href="/list?genre=tragedy">Tragedy</a>
+          <a class="dropdown-item" href="/list?genre=trong-sinh">Trọng Sinh</a>
+          <a class="dropdown-item" href="/list?genre=truyen-mau">Truyện Màu</a>
+          <a class="dropdown-item" href="/list?genre=webtoon">Webtoon</a>
+          <a class="dropdown-item" href="/list?genre=xuyen-khong">Xuyên Không</a>
+          <a class="dropdown-item" href="/list?genre=yaoi">Yaoi</a>
+          <a class="dropdown-item" href="/list?genre=yuri">Yuri</a>
+          <a class="dropdown-item" href="/list?genre=mecha">Mecha</a>
+          <a class="dropdown-item" href="/list?genre=cooking">Cooking</a>
+          <a class="dropdown-item" href="/list?genre=trung-sinh">Trùng Sinh</a>
+          <a class="dropdown-item" href="/list?genre=gourmet">Gourmet</a>
+     -->
+    <div class="dropdown mr-auto">
+      <a class="dropdown-toggle drop-table" href="#" onclick="toggleTable()">Thể loại</a>
+    <div id="tableContainer" style="display: none;">
+      <table>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=action">Action</a></td>
+          <td><a class="dropdown-item" href="/list?genre=adult">Adult</a></td>
+          <td><a class="dropdown-item" href="/list?genre=adventure">Adventure</a></td>
+          <td><a class="dropdown-item" href="/list?genre=anime">Anime</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=chuyen-sinh">Chuyển Sinh</a></td>
+          <td><a class="dropdown-item" href="/list?genre=co-dai">Cổ Đại</a></td>
+          <td><a class="dropdown-item" href="/list?genre=comedy">Comedy</a></td>
+          <td><a class="dropdown-item" href="/list?genre=comic">Comic</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=demons">Demons</a></td>
+          <td><a class="dropdown-item" href="/list?genre=detective">Detective</a></td>
+          <td><a class="dropdown-item" href="/list?genre=doujinshi">Doujinshi</a></td>
+          <td><a class="dropdown-item" href="/list?genre=drama">Drama</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=dam-my">Đam Mỹ</a></td>
+          <td><a class="dropdown-item" href="/list?genre=ecchi">Ecchi</a></td>
+          <td><a class="dropdown-item" href="/list?genre=fantasy">Fantasy</a></td>
+          <td><a class="dropdown-item" href="/list?genre=gender-bender">Gender Bender</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=harem">Harem</a></td>
+          <td><a class="dropdown-item" href="/list?genre=historical">Historical</a></td>
+          <td><a class="dropdown-item" href="/list?genre=horror">Horror</a></td>
+          <td><a class="dropdown-item" href="/list?genre=huyen-huyen">Huyền Huyễn</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=isekai">Isekai</a></td>
+          <td><a class="dropdown-item" href="/list?genre=josei">Josei</a></td>
+          <td><a class="dropdown-item" href="/list?genre=mafia">Mafia</a></td>
+          <td><a class="dropdown-item" href="/list?genre=magic">Magic</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=manhua">Manhua</a></td>
+          <td><a class="dropdown-item" href="/list?genre=manhwa">Manhwa</a></td>
+          <td><a class="dropdown-item" href="/list?genre=martial-arts">Martial Arts</a></td>
+          <td><a class="dropdown-item" href="/list?genre=mature">Mature</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=military">Military</a></td>
+          <td><a class="dropdown-item" href="/list?genre=mystery">Mystery</a></td>
+          <td><a class="dropdown-item" href="/list?genre=ngon-tinh">Ngôn Tình</a></td>
+          <td><a class="dropdown-item" href="/list?genre=one-shot">One shot</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=psychological">Psychological</a></td>
+          <td><a class="dropdown-item" href="/list?genre=romance">Romance</a></td>
+          <td><a class="dropdown-item" href="/list?genre=school-life">School Life</a></td>
+          <td><a class="dropdown-item" href="/list?genre=sci-fi">Sci-fi</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=seinen">Seinen</a></td>
+          <td><a class="dropdown-item" href="/list?genre=shoujo">Shoujo</a></td>
+          <td><a class="dropdown-item" href="/list?genre=shoujo-ai">Shoujo Ai</a></td>
+          <td><a class="dropdown-item" href="/list?genre=shounen">Shounen</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=shounen-ai">Shounen Ai</a></td>
+          <td><a class="dropdown-item" href="/list?genre=slice-of-life">Slice of life</a></td>
+          <td><a class="dropdown-item" href="/list?genre=smut">Smut</a></td>
+          <td><a class="dropdown-item" href="/list?genre=sports">Sports</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=supernatural">Supernatural</a></td>
+          <td><a class="dropdown-item" href="/list?genre=tragedy">Tragedy</a></td>
+          <td><a class="dropdown-item" href="/list?genre=trong-sinh">Trọng Sinh</a></td>
+          <td><a class="dropdown-item" href="/list?genre=truyen-mau">Truyện Màu</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=webtoon">Webtoon</a></td>
+          <td><a class="dropdown-item" href="/list?genre=xuyen-khong">Xuyên Không</a></td>
+          <td><a class="dropdown-item" href="/list?genre=yaoi">Yaoi</a></td>
+          <td><a class="dropdown-item" href="/list?genre=yuri">Yuri</a></td>
+        </tr>
+        <tr>
+          <td><a class="dropdown-item" href="/list?genre=mecha">Mecha</a></td>
+          <td><a class="dropdown-item" href="/list?genre=cooking">Cooking</a></td>
+          <td><a class="dropdown-item" href="/list?genre=trung-sinh">Trùng Sinh</a></td>
+          <td><a class="dropdown-item" href="/list?genre=gourmet">Gourmet</a></td>
+        </tr>
+      </table>
+    </div>
+    </div>
+
+
+    <a href="/random">
+      <h8 class="drop-table ml-auto mr-3">Random</h8>
+    </a>
 
     <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
       <input class="form-control ml-auto" type="search" placeholder="Search" aria-label="Search" name="keyword">

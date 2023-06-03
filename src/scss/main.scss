@@ -6,8 +6,13 @@ h1, h2{
     color: #f8f9fa;
 }
 
+a{
+    color: #333;
+}
+
 a:hover{
     text-decoration: none;
+    color: #1e6dbb;
 }
 
 .move-up {
@@ -22,6 +27,31 @@ a:hover{
     bottom: 10px;
     right: 20px;
     cursor: pointer;
+}
+
+//header
+h8{
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+  }
+
+#tableContainer {
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 1;
+  }
+
+.drop-table{
+    color: #fff;
+}
+
+.drop-table:hover{
+    color: #22a324;
 }
 
 //home
@@ -70,6 +100,10 @@ a:hover{
 
 .related-manga{
     background-color: #6c757d;
+}
+
+h4{
+    color: #16103b;
 }
 
 //read
