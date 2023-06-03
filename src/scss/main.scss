@@ -30,6 +30,12 @@ a:hover{
 }
 
 //header
+.header{
+    width: 100%;
+    position: static;
+    z-index: 100;
+}
+
 h8{
     color: #fff;
 }

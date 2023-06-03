@@ -30,5 +30,20 @@
         document.removeEventListener("click", closeTableOutsideClick);
       }
     }
+
+    let scrollPosition = window.pageYOffset;
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      const currentScrollPosition = window.pageYOffset;
+
+      if (currentScrollPosition < scrollPosition && currentScrollPosition > 0) {
+        header.style.position = 'fixed';
+        header.style.top = 0;
+      } else {
+        header.style.position = 'static';
+      }
+
+      scrollPosition = currentScrollPosition;
+    });
   </script>
 </head>
