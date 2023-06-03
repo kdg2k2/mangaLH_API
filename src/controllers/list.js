@@ -113,8 +113,7 @@ const list = async (req, res) => {
 			};
 		});
 
-		// res.render('partials/header.ejs', result);
-		res.json(result);
+		res.render('pages/search', result);
 		return;
 	}
 
