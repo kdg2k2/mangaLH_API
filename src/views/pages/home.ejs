@@ -15,7 +15,11 @@
             <div class="card mb-3">
                <a href="<%= manga.mangaEP %>">
                   <div class="image-container">
-                     <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Cover Image">
+                     <% if (manga.cover) { %>
+                     <img class="card-img-top image-card" src="<%= manga.cover %>" alt="Ảnh truyện">
+                     <% } else { %>
+                     <img class="card-img-top image-card" src="/image/default-imagel.jpg" alt="Ảnh truyện">
+                     <% } %>
                   </div>
                   <div class="card-body">
                         

@@ -20,11 +20,7 @@ a:hover {
   cursor: pointer; }
 
 .image-card {
-  height: 250px;
-  transition: transform 0.5s ease; }
-
-.image-card:hover {
-  transform: scale(1.1); }
+  height: 250px; }
 
 .body {
   background-color: #343a40;
@@ -32,7 +28,11 @@ a:hover {
 
 .card {
   border-radius: 5px;
-  height: 445px; }
+  height: 445px;
+  transition: transform 0.5s ease; }
+
+.card:hover {
+  transform: scale(1.1); }
 
 .more-image {
   position: absolute;

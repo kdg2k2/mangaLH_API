@@ -7,57 +7,57 @@
    <div class="move-down">
       <img src="/image/down.png" alt="">
    </div>
-      <div class="container">
-         <h1>Search Results</h1>
-         <!-- Hiển thị kết quả tìm kiếm -->
-         <% if (data.mangas && data.mangas.length > 0) { %>
-         <div class="row">
-            <% data.mangas.forEach(function(manga) { %>
-            <div class="col-md-3 mb-3">
-               <div class="card">
-                  <a href="<%= manga.mangaEP %>">
-                     <img src="<%= manga.cover %>" class="card-img-top image-card" alt="Manga Cover">
-                     <div class="card-body">
-                        <h5 class="card-title"><%= manga.title %></h5>
-                  </a>
-                  <p class="card-text">Last Chapter: <%= manga.lastChap %></p>
-                  <p class="card-text">Last Update: <%= manga.lastUpdate %></p>
-                  </div>
+   <div class="container">
+      <h1>Search Results</h1>
+      <!-- Hiển thị kết quả tìm kiếm -->
+      <% if (data.mangas && data.mangas.length > 0) { %>
+      <div class="row">
+         <% data.mangas.forEach(function(manga) { %>
+         <div class="col-md-3 mb-3">
+            <div class="card">
+               <a href="<%= manga.mangaEP %>">
+                  <img src="<%= manga.cover %>" class="card-img-top image-card" alt="Manga Cover">
+                  <div class="card-body">
+                     <h5 class="card-title"><%= manga.title %></h5>
+               </a>
+               <p class="card-text">Last Chapter: <%= manga.lastChap %></p>
+               <p class="card-text">Last Update: <%= manga.lastUpdate %></p>
                </div>
             </div>
-            <% }); %>
          </div>
-         <% } else { %>
-         <p>No results found.</p>
-         <% } %>
-         <!-- Hiển thị phân trang -->
-         <nav aria-label="Page navigation">
-            <ul class="pagination">
-               <% if (data.totalPages > 1) { %>
-               <li class="page-item <% if (data.currentPage === 1) { %>disabled<% } %>">
-                  <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=1">First</a>
-               </li>
-               <% if (data.currentPage > 3) { %>
-               <li class="page-item disabled">
-                  <a class="page-link">...</a>
-               </li>
-               <% } %>
-               <% for (let i = Math.max(1, data.currentPage - 2); i <= Math.min(data.totalPages, data.currentPage + 2); i++) { %>
-               <li class="page-item <% if (data.currentPage === i) { %>active<% } %>">
-                  <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= i %>"><%= i %></a>
-               </li>
-               <% } %>
-               <% if (data.currentPage < data.totalPages - 2) { %>
-               <li class="page-item disabled">
-                  <a class="page-link">...</a>
-               </li>
-               <% } %>
-               <li class="page-item <% if (data.currentPage === data.totalPages) { %>disabled<% } %>">
-                  <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= data.totalPages %>">Last</a>
-               </li>
-               <% } %>
-            </ul>
-         </nav>
+         <% }); %>
       </div>
-      <%- include('../partials/footer') %>
+      <% } else { %>
+      <p>No results found.</p>
+      <% } %>
+      <!-- Hiển thị phân trang -->
+      <nav aria-label="Page navigation">
+         <ul class="pagination">
+            <% if (data.totalPages > 1) { %>
+            <li class="page-item <% if (data.currentPage === 1) { %>disabled<% } %>">
+               <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=1">First</a>
+            </li>
+            <% if (data.currentPage > 3) { %>
+            <li class="page-item disabled">
+               <a class="page-link">...</a>
+            </li>
+            <% } %>
+            <% for (let i = Math.max(1, data.currentPage - 2); i <= Math.min(data.totalPages, data.currentPage + 2); i++) { %>
+            <li class="page-item <% if (data.currentPage === i) { %>active<% } %>">
+               <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= i %>"><%= i %></a>
+            </li>
+            <% } %>
+            <% if (data.currentPage < data.totalPages - 2) { %>
+            <li class="page-item disabled">
+               <a class="page-link">...</a>
+            </li>
+            <% } %>
+            <li class="page-item <% if (data.currentPage === data.totalPages) { %>disabled<% } %>">
+               <a class="page-link" href="/search?keyword=<%=data.queryResults%>&page=<%= data.totalPages %>">Last</a>
+            </li>
+            <% } %>
+         </ul>
+      </nav>
+   </div>
+   <%- include('../partials/footer') %>
 </body>
